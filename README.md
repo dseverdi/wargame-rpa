@@ -1,23 +1,24 @@
 # Attack of the Orcs | RPA project @ EFOS
 
 
-## Introduction
+## Uvod
 ---
-This is a command line fantasy war game!
+Ovo je programerski projekt izrađen na kolegiju *Razvoj poslovnih aplikacija* na EFOS.
 
-## Documentation
+## Dokumentacija
 ---
-Documentation can be found at...
+API dokumentaciju možete naći u mapi `wargame/docs/wargame.html`
 
-## Example Usage
+## Primjer korištenja
 ---
-Here is an example to import the modules from this package.
+Paket možete isntalirati sa `python setup.py install`. Nakon toga možete program testirati.
+
 ```Python
     from wargame.attackoftheorcs import AttackOfTheOrcs
     game = AttackOfTheOrcs()
     game.play()
 ```
 
-## LICENSE
+## LICENCA
 ---
-See `LICENSE.txt` file.
+Pogledajte `LICENSE.txt` datoteku.
