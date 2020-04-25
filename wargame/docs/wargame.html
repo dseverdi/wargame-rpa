@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <title>wargame package &#8212; wargame 2.0.0 dokumentacija</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Abecedni popis" href="genindex.html" />
+    <link rel="search" title="Traži" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="wargame-package">
+<h1>wargame package<a class="headerlink" href="#wargame-package" title="Link na taj naslov">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link na taj naslov">¶</a></h2>
+</div>
+<div class="section" id="module-wargame.attackoftheorcs">
+<span id="wargame-attackoftheorcs-module"></span><h2>wargame.attackoftheorcs module<a class="headerlink" href="#module-wargame.attackoftheorcs" title="Link na taj naslov">¶</a></h2>
+<p>wargame.attackoftheorcs</p>
+<p>Ovaj modul sadrži implementaciju klase <cite>AttackOfTheOrcs</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>2020, None</p>
+</dd>
+<dt class="field-even">license</dt>
+<dd class="field-even"><p>The MIT License (MIT) .</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="wargame.attackoftheorcs.AttackOfTheOrcs">
+<em class="property">class </em><code class="sig-prename descclassname">wargame.attackoftheorcs.</code><code class="sig-name descname">AttackOfTheOrcs</code><a class="headerlink" href="#wargame.attackoftheorcs.AttackOfTheOrcs" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Glavna klasa za igru napad orkova</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+<dl class="py method">
+<dt id="wargame.attackoftheorcs.AttackOfTheOrcs.get_occupants">
+<code class="sig-name descname">get_occupants</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.attackoftheorcs.AttackOfTheOrcs.get_occupants" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Vraca listu okupanata za sve kucice.</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.attackoftheorcs.AttackOfTheOrcs.play">
+<code class="sig-name descname">play</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.attackoftheorcs.AttackOfTheOrcs.play" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Metoda za pokretanje igre.</p>
+<p>Metoda se pokreće iz glavnog programa.</p>
+<p>Stavite opis metode, parametre i atribute, seealso i todo.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.attackoftheorcs.AttackOfTheOrcs.show_game_mission">
+<code class="sig-name descname">show_game_mission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.attackoftheorcs.AttackOfTheOrcs.show_game_mission" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Ispis misije igre</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.gameunit">
+<span id="wargame-gameunit-module"></span><h2>wargame.gameunit module<a class="headerlink" href="#module-wargame.gameunit" title="Link na taj naslov">¶</a></h2>
+<p>wargame.gameunit</p>
+<p>Ovaj modul sadrži implementaciju GameUnit klase.</p>
+<dl class="py class">
+<dt id="wargame.gameunit.GameUnit">
+<em class="property">class </em><code class="sig-prename descclassname">wargame.gameunit.</code><code class="sig-name descname">GameUnit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameunit.GameUnit" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Bazna klasa za stvaranje likova u igri</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+<dl class="py method">
+<dt id="wargame.gameunit.GameUnit.attack">
+<code class="sig-name descname">attack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neprijatelj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameunit.GameUnit.attack" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Glavna logika za ‘napad’ neprijateljske jedinice</p>
+<p>Stavite opis metode, parametre, seealso i todo.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.gameunit.GameUnit.heal">
+<code class="sig-name descname">heal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">heal_by</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">full_healing</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameunit.GameUnit.heal" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Metoda za ozravljanje lika.</p>
+<p>Stavite opis metode, parametre, seealso i todo.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.gameunit.GameUnit.info">
+<code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameunit.GameUnit.info" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Ispisi informaciju o igracu/neprijatelju
+Još nije implementirana.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.gameunit.GameUnit.reset_health_meter">
+<code class="sig-name descname">reset_health_meter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameunit.GameUnit.reset_health_meter" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Resetiranje mjeraca zdravlja</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.gameunit.GameUnit.show_health">
+<code class="sig-name descname">show_health</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bold</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">'\n'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameunit.GameUnit.show_health" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Ispisi informaciju o zdravlju.</p>
+<p>Stavite opis metoda, parametre, seealso i todo.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.gameuniterror">
+<span id="wargame-gameuniterror-module"></span><h2>wargame.gameuniterror module<a class="headerlink" href="#module-wargame.gameuniterror" title="Link na taj naslov">¶</a></h2>
+<p>wargame.gameuniterror</p>
+<p>Modul koji implementira vlastito definirane iznimke.</p>
+<dl class="py exception">
+<dt id="wargame.gameuniterror.GameUnitError">
+<em class="property">exception </em><code class="sig-prename descclassname">wargame.gameuniterror.</code><code class="sig-name descname">GameUnitError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">code</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameuniterror.GameUnitError" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>prilagođena klasa iznimke za <cite>GameUnit</cite> i njene podklase</p>
+<p>Nasljeđuje ugrađenu <cite>Exception</cite> klasu.</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="wargame.gameuniterror.HealthMeterException">
+<em class="property">exception </em><code class="sig-prename descclassname">wargame.gameuniterror.</code><code class="sig-name descname">HealthMeterException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameuniterror.HealthMeterException" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <a class="reference internal" href="#wargame.gameuniterror.GameUnitError" title="wargame.gameuniterror.GameUnitError"><code class="xref py py-class docutils literal notranslate"><span class="pre">wargame.gameuniterror.GameUnitError</span></code></a></p>
+<p>prilagođena klasa za zdravometar.</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.gameutils">
+<span id="wargame-gameutils-module"></span><h2>wargame.gameutils module<a class="headerlink" href="#module-wargame.gameutils" title="Link na taj naslov">¶</a></h2>
+<p>wargame.gameutils</p>
+<p>Pomoćne funkcionalnost za igru Attack of the Orcs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">license</dt>
+<dd class="field-even"><p>The MIT License (MIT) . Pogledajte LICENSE za detalje.</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt id="wargame.gameutils.print_bold">
+<code class="sig-prename descclassname">wargame.gameutils.</code><code class="sig-name descname">print_bold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">'\n'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameutils.print_bold" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Funkcija za formatiranje teksta</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="wargame.gameutils.weighted_random_selection">
+<code class="sig-prename descclassname">wargame.gameutils.</code><code class="sig-name descname">weighted_random_selection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj1</span></em>, <em class="sig-param"><span class="n">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.gameutils.weighted_random_selection" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Slucajan odabir: 
+odaberi s vjerojatnošću 0.3 ranjavnanje Taliona, inače, neprijatelja.</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.hut">
+<span id="wargame-hut-module"></span><h2>wargame.hut module<a class="headerlink" href="#module-wargame.hut" title="Link na taj naslov">¶</a></h2>
+<p>wargame.hut</p>
+<p>Ova je implementacija kompatibilna s Python 3.6+ verzijom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">licence</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="wargame.hut.Hut">
+<em class="property">class </em><code class="sig-prename descclassname">wargame.hut.</code><code class="sig-name descname">Hut</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em>, <em class="sig-param"><span class="n">occupant</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.hut.Hut" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa koja prezentira kucicu.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number</strong> (<em>int</em>) – broj kucice</p></li>
+<li><p><strong>occupant</strong> (<em>AbstractGameUnit</em>) – Tip okupanta kucice</p></li>
+</ul>
+</dd>
+<dt class="field-even">Varijable</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>number</strong> (<em>int</em>) – broj pridruzen kucici</p></li>
+<li><p><strong>is_acquired</strong> (<em>boolean</em>) – je li kucica osvojena od igraca Taliona</p></li>
+<li><p><strong>occupant</strong> (<em>AbstractGameUnit</em>) – <dl class="simple">
+<dt>Okupant kucice.</dt><dd><p>Mora biti instanca klase</p>
+</dd>
+</dl>
+<p><cite>AbstractGameUnit</cite>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">Više informacija</p>
+<p>gdje se još koristi –
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">attackoftheorcs.AttackOfTheOrcs.setup_game_scenario()</span></code></p>
+</div>
+<dl class="py method">
+<dt id="wargame.hut.Hut.acquire">
+<code class="sig-name descname">acquire</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">new_occupant</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.hut.Hut.acquire" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Ažuriraj okupanta kućice i promijeni status <cite>is_acquired</cite>.</p>
+<p>Ažuriraj varijablu instance za okupanta s parametrom <cite>new_occupant</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri</dt>
+<dd class="field-odd"><p><strong>new_occupant</strong> – self.occupant će se ažurirati s ovim parametrom</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.hut.Hut.get_occupant_type">
+<code class="sig-name descname">get_occupant_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.hut.Hut.get_occupant_type" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Vraca tekst s opisom o vrsti zauzeća kućice.</p>
+<p>Koristi se za ispis informacije tko je prisutan u kućici. 
+Informaciju koju vrati ovisi o okupantu i može biti: 
+‘neprijatelj’, ‘prijatelj’, ‘ZAUZETA’,’slobodna’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Vraća</dt>
+<dd class="field-odd"><p>string koji predstavlja vrstu okupanta</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.huterror">
+<span id="wargame-huterror-module"></span><h2>wargame.huterror module<a class="headerlink" href="#module-wargame.huterror" title="Link na taj naslov">¶</a></h2>
+<p>wargame.gameuniterror</p>
+<p>Modul koji implementira vlastito definirane iznimke.</p>
+<dl class="py exception">
+<dt id="wargame.huterror.HutError">
+<em class="property">exception </em><code class="sig-prename descclassname">wargame.huterror.</code><code class="sig-name descname">HutError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.huterror.HutError" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Prilagođena klasa iznimke za <cite>Hut</cite>.</p>
+<p>Nasljeđuje ugrađenu <cite>Exception</cite> klasu.</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.knight">
+<span id="wargame-knight-module"></span><h2>wargame.knight module<a class="headerlink" href="#module-wargame.knight" title="Link na taj naslov">¶</a></h2>
+<p>wargame.knight</p>
+<p>Ovaj modul sadrži klasu koja implementira viteza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>2020, None</p>
+</dd>
+<dt class="field-even">license</dt>
+<dd class="field-even"><p>The MIT License (MIT) .</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="wargame.knight.Knight">
+<em class="property">class </em><code class="sig-prename descclassname">wargame.knight.</code><code class="sig-name descname">Knight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Vitez Talion'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.knight.Knight" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">gameunit.GameUnit</span></code></p>
+<p>Klasa koja predstavlja Viteza, lika u igri.
+Stavite opis metode, parametre i atribute, seealso i todo.</p>
+<dl class="py method">
+<dt id="wargame.knight.Knight.acquire_hut">
+<code class="sig-name descname">acquire_hut</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hut</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.knight.Knight.acquire_hut" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Borba za kucicu.</p>
+<p>Stavite opis metode, parametre i atribute, seealso i todo.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.knight.Knight.info">
+<code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.knight.Knight.info" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Ispiši osnovne informacije o liku.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wargame.knight.Knight.run_away">
+<code class="sig-name descname">run_away</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.knight.Knight.run_away" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Metoda za napustanje borbe.</p>
+<p>Stavite opis metode, parametre i atribute, seealso i todo.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame.orcrider">
+<span id="wargame-orcrider-module"></span><h2>wargame.orcrider module<a class="headerlink" href="#module-wargame.orcrider" title="Link na taj naslov">¶</a></h2>
+<p>wargame.orcrider</p>
+<p>Ovaj modul sadrži implmentaciju OrcRider klase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>2020, None</p>
+</dd>
+<dt class="field-even">license</dt>
+<dd class="field-even"><p>The MIT License (MIT) .</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt id="wargame.orcrider.OrcRider">
+<em class="property">class </em><code class="sig-prename descclassname">wargame.orcrider.</code><code class="sig-name descname">OrcRider</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#wargame.orcrider.OrcRider" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Osnovice: <code class="xref py py-class docutils literal notranslate"><span class="pre">gameunit.GameUnit</span></code></p>
+<p>Klasa koja predstavlja lika Orc Rider</p>
+<p>Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća.</p>
+<dl class="py method">
+<dt id="wargame.orcrider.OrcRider.info">
+<code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wargame.orcrider.OrcRider.info" title="Link na tu definiciju">¶</a></dt>
+<dd><p>Ispisuje osnovnu informaciju o liku.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-wargame">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wargame" title="Link na taj naslov">¶</a></h2>
+<p>wargame.__init__</p>
+<p>Ovo je <cite>__init__.py</cite> datoteka za wargame igru.</p>
+<p>Ovaj modul je kompatibilan s Python 3.6+ verzijom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>2020, None</p>
+</dd>
+<dt class="field-even">licence</dt>
+<dd class="field-even"><p>The MIT licenca (MIT) . Pogledajte LICENCE datoteku projekta.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wargame</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigacija</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Brzo pretraživanje</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Traži" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Domagoj Ševerdija.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/wargame.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

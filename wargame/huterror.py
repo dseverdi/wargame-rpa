@@ -1,4 +1,16 @@
+"""wargame.gameuniterror
+
+Modul koji implementira vlastito definirane iznimke.
+
+"""
+
 class HutError(Exception):
+    """Prilagođena klasa iznimke za `Hut`.
+
+    Nasljeđuje ugrađenu `Exception` klasu.
+
+    Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća. 
+    """
     def __init__(self, code):
         self.error_message = ''
         self.error_dict = {

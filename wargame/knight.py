@@ -1,9 +1,20 @@
+"""wargame.knight
+
+Ovaj modul sadrži klasu koja implementira viteza.
+
+:copyright: 2020, None
+
+:license: The MIT License (MIT) . 
+"""
+
 
 from gameutils import print_bold
 from gameunit import GameUnit
 
 class Knight(GameUnit):
-    """ Klasa koja predstavlja Viteza, lika u igri
+    """ Klasa koja predstavlja Viteza, lika u igri.
+    Stavite opis metode, parametre i atribute, seealso i todo.
+    
     """
     def __init__(self, name='Vitez Talion'):
         super().__init__(name=name) # poziv konstruktora bazne klase
@@ -14,10 +25,15 @@ class Knight(GameUnit):
         self.unit_type = 'prijatelj'  # status jedinice
 
     def info(self):
+        """Ispiši osnovne informacije o liku.
+        """
+
         print("Ja sam vitez!")
 
     def acquire_hut(self, hut):
-        """Borba za kucicu
+        """Borba za kucicu.
+
+        Stavite opis metode, parametre i atribute, seealso i todo.
        """
         print_bold("Ulazim u kucicu broj %d..." % hut.number, end=' ')
         is_neprijatelj = (isinstance(hut.occupant, GameUnit) and
@@ -54,7 +70,9 @@ class Knight(GameUnit):
             self.heal()
 
     def run_away(self):
-        """Metoda za napustanje borbe
+        """Metoda za napustanje borbe.
+
+        Stavite opis metode, parametre i atribute, seealso i todo.
         """
         print_bold("BJEZANJE...")
         self.neprijatelj = None

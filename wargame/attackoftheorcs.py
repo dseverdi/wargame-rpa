@@ -1,4 +1,14 @@
-# moduli sustava
+"""wargame.attackoftheorcs
+
+Ovaj modul sadrži implementaciju klase `AttackOfTheOrcs`.
+
+
+
+:copyright: 2020, None
+
+:license: The MIT License (MIT) . 
+"""
+
 import sys
 import random
 
@@ -12,13 +22,18 @@ from gameutils import print_bold
 from huterror import HutError
 
 class AttackOfTheOrcs:
-    """Glavna klasa za igru napad orkova"""
+    """Glavna klasa za igru napad orkova
+    
+    Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća. 
+    """
     def __init__(self):
         self.huts = []
         self.player = None
 
     def get_occupants(self):
-        """Vraca listu okupanata za sve kucice
+        """Vraca listu okupanata za sve kucice.
+
+        Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća. 
         """
         return [x.get_occupant_type() for x in self.huts]
 
@@ -30,7 +45,10 @@ class AttackOfTheOrcs:
         print("---------------------------------------------------------\n")
 
     def _process_user_choice(self):  # zasticena metoda
-        """metoda za obradu korisnickog unosa broja kucice"""
+        """metoda za obradu korisnickog unosa broja kucice
+
+        Stavite opis metode i parametre (argumenti ili atributi) i što funkcija vraća. 
+        """
         verifying_choice = True
         idx = 0
         print("Trenutni okupanti: {}". format(self.get_occupants()))
@@ -77,7 +95,11 @@ class AttackOfTheOrcs:
                 self.huts.append(Hut(i+1, computer_choice))
 
     def play(self):
-        """Metoda za pokretanje igre
+        """Metoda za pokretanje igre.
+
+        Metoda se pokreće iz glavnog programa.
+
+        Stavite opis metode, parametre i atribute, seealso i todo.
         """
         self.player = Knight()
         self._occupy_huts()
