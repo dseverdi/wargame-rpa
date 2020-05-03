@@ -94,20 +94,24 @@ class AttackOfTheOrcs:
             else:
                 self.huts.append(Hut(i+1, computer_choice))
 
+    def setup_game_scenario(self):
+        """stvori igrača i kućice i raspodjeli okupante u kućice."""
+        self.player = Knight()
+        self._occupy_huts()
+        self.show_game_mission()
+        self.player.show_health(bold=True)
+    
     def play(self):
         """Metoda za pokretanje igre.
 
         Metoda se pokreće iz glavnog programa.
 
-        Stavite opis metode, parametre i atribute, seealso i todo.
+        Stavite opis metode, parametre i atribute, seealso i todo.        
         """
-        self.player = Knight()
-        self._occupy_huts()
-        acquired_hut_counter = 0
 
-        self.show_game_mission()
-        self.player.show_health(bold=True)
-
+        self.setup_game_scenario()
+        # inicijalno postavljanje je gotovo ...
+        acquired_hut_counter = 0       
         while acquired_hut_counter < 5:
             try:
                 idx = self._process_user_choice()
