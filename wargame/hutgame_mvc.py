@@ -1,34 +1,20 @@
-from tkinter import Tk, Label, Radiobutton, PhotoImage, IntVar
-from tkinter import messagebox
-
 import random
 
-class HutGame:
-    def __init__(self, parent):
-        """Igra u kojoj igrač odabire kućicu u kojoj će se Talion odmoriti.
+from tkinter import Tk, PhotoImage, IntVar, Label, Radiobutton, messagebox
 
-        Program inicijalno stavlja 'neprijatelja' ili 'prijatelja' u svaku od kućica. 
-        Neke kućice mogu biti nenastanjene. 
-        Od igrača se očekuje da odaber kućicu u kojoj će smjestiti Taliona. Pobjeđuje se 
-        ako je okupant kućice 'prijatelj' ili kućica nije nastanjena                
-        """
+# slanje poruka
+from pubsub import pub
 
-        # definiraj slike za džunglu i kućicu
-        self.village_image = PhotoImage(file="images/Jungle_small.gif")
-        self.hut_image = PhotoImage(file="images/Hut_small.gif")
-        
-        self.hut_width = 40
-        self.hut_height = 56
-        self.container = parent
 
+# model
+class Model:
+    """Model komponenta aplikacije. Definira glavnu logiku programa."""
+    def __init__(self):
         self.huts = []
         self.result = ""
-        # punjenje kućica
+        # ispuni kućice
         self.occupy_huts()
-        # postavi korisničko sučelje
-        self.setup()
-
-# ------------- ne-GUI metode -----------------------------------
+    
     def occupy_huts(self):
         """funkcija nasumično raspoređuje okupante kućice."""
         occupants = ['neprijatelj', 'prijatelj', 'slobodno']
@@ -39,9 +25,10 @@ class HutGame:
     def enter_hut(self, hut_number):
         """Uđi u kućicu i odredi okupanta.        
         """
-
+        # praćenje
         print("Ulazim u kućicu #:", hut_number)
         hut_occupant = self.huts[hut_number-1]
+        # praćenje
         print("Okupant kućice je: ", hut_occupant)
 
         if hut_occupant == 'neprijatelj':
@@ -54,10 +41,41 @@ class HutGame:
             self.result = "prijatelj je u kućici # {} \n\n".format(hut_number)
             self.result += "Čestitke! POBIJEDILI STE!!!"
 
-        # Proglasi pobjednika!
-        self.announce_winner(self.result)
+        # komunikacija: model->controller
+        pub.sendMessage("najava pobjednika",data=self.result)
 
-#----------------- GUI metode --------------------------------------
+
+
+class View:
+    """Komponenta pogleda prema MVC arhitekturi. Postavlja GUI i definira događaje.
+    """
+    def __init__(self,parent):
+        # definiraj slike za džunglu i kućicu
+        self.village_image = PhotoImage(file="images/Jungle_small.gif")
+        self.hut_image = PhotoImage(file="images/Hut_small.gif")
+
+        # referenca na Tk prozor
+        self.container = parent
+        
+        # velicina kucice
+        self.hut_width = 40
+        self.hut_height = 56
+
+        # definiramo referencu na funkciju koja reagira na odabir radio-buttona
+        self.radio_button_pressed = None        
+
+    def setup(self):
+        """Postavljanje grafičkog sučelja."""
+        # grafički elementi
+        self.create_widgets()
+        # njihova lokacija
+        self.setup_layout()
+
+    def set_callbacks(self,callback_function):
+        """postavi dani argument da bude metoda objekta. Alternativni način izmjena poruka."""
+        self.radio_btn_pressed = callback_function
+
+    
     def create_widgets(self):
         """stvori grafičke elemente unutar glavnog prozora"""
         self.var = IntVar()
@@ -81,11 +99,6 @@ class HutGame:
         self.r4 = Radiobutton(self.container, r_btn_config, value=4)
         self.r5 = Radiobutton(self.container, r_btn_config, value=5)
 
-    def setup(self):
-        """Postavi sučelje."""
-        self.create_widgets()
-        self.setup_layout()
-
     def setup_layout(self):
         """Koristi mrežnu geometriju za postavljanje grafičkih elemenata"""
         # dopuštanje skaliranja veličine specifičnih redaka odnosno stupaca
@@ -101,28 +114,54 @@ class HutGame:
         self.r3.grid(row=2, column=3)
         self.r4.grid(row=3, column=0)
         self.r5.grid(row=4, column=4)
-
+    
     def announce_winner(self, data):
         """Proglasi pobjednika
         """
         # messagebox widget
         messagebox.showinfo("Proglašenje pobjednika: ", message=data)
 
-    # Upravljanje s događajima
+
+
+class Controller:
+    """Upravljač klasa za igru prema MVC argitekturi."""
+    def __init__(self,parent):
+        self.parent = parent # referenca na TK roditeljsku klasu
+        # definiraj model
+        self.model = Model()
+        # definiraj pogled
+        self.view = View(parent)
+        # na koje događaje reagirati?
+        self.view.set_callbacks(self.radio_btn_pressed)
+        # postavi pogled
+        self.view.setup()
+        # primaj poruke na temu "najava pobjednika"
+        pub.subscribe(self.model_change_handler,"najava pobjednika")
+
+
+     # komunikacija: view->model 
     def radio_btn_pressed(self):
-        """callback funkcija kada se pritisne radiobutton
-        """
-        self.enter_hut(self.var.get())
+        """callback funkcija za pritisak radiobutton na pogledu"""
+        self.model.enter_hut(self.view.var.get())
+
+    # komunikacija: controller->view nakon izmjene na modelu
+    def model_change_handler(self,data):
+        self.view.announce_winner(data)
+        
 
 
-if __name__ == "__main__":
-    # stvori glavni prozor Tk GUI-a
+
+
+
+if __name__ == '__main__':
+   # stvori glavni prozor Tk GUI-a
     mainwin = Tk()
     # definiraj veličinu prozora
     WIDTH = 494
     HEIGHT = 307
     mainwin.geometry("{}x{}".format(WIDTH, HEIGHT))
     mainwin.resizable(0, 0) # postavljamo da se prozor ne može skalirati
-    mainwin.title("Napad Orkova v2.0")
-    game_app = HutGame(mainwin)
+    mainwin.title("Napad Orkova v2.1")
+    # kontroler upravlja aplikacijom
+    game_app = Controller(mainwin)
     mainwin.mainloop() # petlja događaja
